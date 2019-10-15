@@ -15,7 +15,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 #가망고객의 리스트보기 admin 일때는 전체리스트, 개인일때는 각자의 리스트만 확인하고 회사이름, 영업자이름 내부외부 등으로 검색가능
 class CustomerlistView(LoginRequiredMixin,ListView):
     model = Customer
-    paginate_by = 10
+    paginate_by = 30
     ordering = ['company']
 
     def get_queryset(self, *args, **kwargs):
