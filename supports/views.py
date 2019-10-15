@@ -418,8 +418,8 @@ class Dashborad_listView(LoginRequiredMixin,ListView):
         workings = Working.objects.filter(~Q(ing="계약완료")).all()
         working_result = Working.objects.filter(Q(ing="계약완료")).all()
         result_amount = Result.objects.filter(Q(work_result="입금완료")&Q(amount_date__isnull=False)).all()
-        result_pay = Result.objects.filter(pay_date__isnull=False).all()
-        result_pay_no = Result.objects.filter(pay_date__isnull=True).all()
+        result_pay = Result.objects.filter(Q(work_result="입금완료")&Q(pay_date__isnull=False)).all()
+        result_pay_no = Result.objects.filter(Q(work_result="입금완료")&Q(pay_date__isnull=True)).all()
         result_fee = Result.objects.filter(Q(work_result="입금완료")).all()
 
 
@@ -449,8 +449,8 @@ class Dashborad_listView(LoginRequiredMixin,ListView):
             workings = Working.objects.filter(~Q(ing="계약완료")).count()
             working_result = Working.objects.filter(Q(ing="계약완료")).count()
             result_amount = Result.objects.filter(Q(work_result="입금완료") & Q(amount_date__isnull=False)).aggregate(total_amount=Sum('amount'))
-            result_pay = Result.objects.filter(pay_date__isnull=False).aggregate(total_pay=Sum('pay'))
-            result_pay_no = Result.objects.filter(pay_date__isnull=True).aggregate(total_pay=Sum('pay'))
+            result_pay = Result.objects.filter(Q(work_result="입금완료")&Q(pay_date__isnull=False)).aggregate(total_pay=Sum('pay'))
+            result_pay_no = Result.objects.filter(Q(work_result="입금완료")&Q(pay_date__isnull=True)).aggregate(total_pay=Sum('pay'))
             result_fee = Result.objects.filter(Q(work_result="입금완료")).aggregate(total_pay=Sum('fee'))
 
         context = {
