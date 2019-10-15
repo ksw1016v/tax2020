@@ -20,7 +20,7 @@ from django.db.models import Count, Sum, Avg
 
 class WorklistView(LoginRequiredMixin,ListView):
     model = Work
-    paginate_by = 10
+    paginate_by = 30
     ordering = ['work_name']
 
     def get_queryset(self, *args, **kwargs):
@@ -54,7 +54,7 @@ class Work_UpdateView(LoginRequiredMixin,UpdateView):
 
 class Customer_work_Add_ListView(LoginRequiredMixin,ListView):
     model = customers_models.Customer
-    paginate_by = 10
+    paginate_by = 30
     ordering = ['company']
 
     def get_queryset(self, *args, **kwargs):
@@ -94,7 +94,7 @@ class Work_add_CreateView(LoginRequiredMixin,CreateView):
 class Working_listView(LoginRequiredMixin,ListView):
     model = Working
     fields = '__all__'
-    paginate_by = 10
+    paginate_by = 30
     ordering = ['work_name']
 
     def get_queryset(self, *args, **kwargs):
@@ -124,7 +124,7 @@ class Working_listView(LoginRequiredMixin,ListView):
 class Working_result_listView(LoginRequiredMixin,ListView):
     model = Working
     fields = '__all__'
-    paginate_by = 10
+    paginate_by = 30
     ordering = ['work_name']
 
     def get_queryset(self, *args, **kwargs):
@@ -417,9 +417,9 @@ class Dashborad_listView(LoginRequiredMixin,ListView):
         customers = customers_models.Customer.objects.all()
         workings = Working.objects.filter(~Q(ing="계약완료")).all()
         working_result = Working.objects.filter(Q(ing="계약완료")).all()
-        result_amount = Result.objects.filter(Q(work_result="입금완료")&Q(amount_date__isnull=False)).all()
-        result_pay = Result.objects.filter(Q(work_result="입금완료")&Q(pay_date__isnull=False)).all()
-        result_pay_no = Result.objects.filter(Q(work_result="입금완료")&Q(pay_date__isnull=True)).all()
+        result_amount = Result.objects.filter(Q(work_result="입금완료") & Q(amount_date__isnull=False)).all()
+        result_pay = Result.objects.filter(Q(work_result="입금완료") & Q(pay_date__isnull=False)).all()
+        result_pay_no = Result.objects.filter(Q(work_result="입금완료") & Q(pay_date__isnull=True)).all()
         result_fee = Result.objects.filter(Q(work_result="입금완료")).all()
 
 
@@ -449,8 +449,8 @@ class Dashborad_listView(LoginRequiredMixin,ListView):
             workings = Working.objects.filter(~Q(ing="계약완료")).count()
             working_result = Working.objects.filter(Q(ing="계약완료")).count()
             result_amount = Result.objects.filter(Q(work_result="입금완료") & Q(amount_date__isnull=False)).aggregate(total_amount=Sum('amount'))
-            result_pay = Result.objects.filter(Q(work_result="입금완료")&Q(pay_date__isnull=False)).aggregate(total_pay=Sum('pay'))
-            result_pay_no = Result.objects.filter(Q(work_result="입금완료")&Q(pay_date__isnull=True)).aggregate(total_pay=Sum('pay'))
+            result_pay = Result.objects.filter(Q(work_result="입금완료") & Q(pay_date__isnull=False)).aggregate(total_pay=Sum('pay'))
+            result_pay_no = Result.objects.filter(Q(work_result="입금완료") & Q(pay_date__isnull=True)).aggregate(total_pay=Sum('pay'))
             result_fee = Result.objects.filter(Q(work_result="입금완료")).aggregate(total_pay=Sum('fee'))
 
         context = {
@@ -471,7 +471,7 @@ class Dashborad_listView(LoginRequiredMixin,ListView):
 class Working_total_listView(LoginRequiredMixin,ListView):
     model = Working
     fields = '__all__'
-    paginate_by = 10
+    paginate_by = 30
     ordering = ['work_name']
 
     def get_queryset(self, *args, **kwargs):
