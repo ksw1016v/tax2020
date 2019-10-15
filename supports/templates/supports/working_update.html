@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<body class="bg-gradient-primary">
+
+  <div class="container">
+    <div class="card o-hidden border-0 shadow-lg my-2">
+      <div class="card-body p-0">
+        <!-- Nested Row within Card Body -->
+        <div class="row">
+          <div class="col-lg-6 d-none d-lg-block">
+            <img class="img-fluid px-3 px-sm-2 mt-2 mb-2" style="width: 30rem;" src="{%static 'accounts/img/undraw_posting_photo.svg' %}">
+            <div class="px-3 px-sm-2 mt-2 mb-2" >
+
+                {% for working in workings %}
+                  <table class="type09 "  width="450">
+                    <thead>
+                        <tr>
+                        <th scope="col" colspan="6" ></th>
+                        </tr>
+                     </thead>
+
+                    <tr>
+                         <th scope="row">구분</th>
+                         <td>{{working.company.category}}</td>
+                         <th scope="row">영업자</th>
+                         <td>{{working.company.sales}}</td>
+                    </tr>
+
+                    <tr>
+                         <th scope="row">회사</th>
+                         <td>{{working.company.company}}</td>
+                         <th scope="row">대표자</th>
+                         <td>{{working.company.name}}</td>
+                    </tr>
+                    <tr>
+                         <th scope="row">휴대폰</th>
+                         <td>{{working.company.phone}}</td>
+                         <th scope="row">지역</th>
+                         <td>{{working.company.location}}</td>
+                    </tr>
+                    <tr>
+                         <th scope="row" >주소</th>
+                         <td colspan="6">{{working.company.address}}</td>
+                    </tr>
+                    <tr>
+                         <th scope="row">참고</br>사항</th>
+                         <td colspan="7">{{working.company.memo}}</td>
+                    </tr>
+                   {% endfor %}
+                  </table>
+            <p></p>
+
+
+         </div>
+
+
+          </div>
+          <div class="col-lg-6">
+            <div class="p-5">
+              <div class="text-center">
+                <h1 class="h5 text-gray-900 mb-2">
+                     <p></p>사업 업데이트</h1>
+              </div>
+              <small>
+              <form class="user" action="" method="post" autocomplete="off">
+
+                <div class="form-group">
+                  {{form.work_name |as_crispy_field}}
+                </div>
+                <div class="form-group">
+                  {{form.ing |as_crispy_field}}
+                </div>
+                <div class="form-group">
+                  {{form.support_amount |as_crispy_field}}
+                </div>
+                <div class="form-group">
+                  {{form.pay_per |as_crispy_field}}
+                </div>
+                <div class="form-group">
+                  {{form.fee_per |as_crispy_field}}
+                </div>
+                <div class="form-group">
+                  {{form.memo |as_crispy_field}}
+                </div>
+
+                {% csrf_token %}
+                <input class="btn btn-primary btn-user btn-block" style="width:100%" type="submit" value="업무등록">
+
+              </form>
+              </small>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+{% endblock content%}
+

@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load humanize %}
+{%load mathfilters %}
+
+
+<div class="content">
+    <div class="x700">
+    <div class="card shadow mb-4">
+            <div class="card-header py-2">
+              <h6 class="m-1 font-weight-bold text-primary">지원사업리스트</h6>
+                <div class="text-right">
+                    <a class="small" href="{% url 'supports_create'%}">사업 등록하기</a>
+                </div>
+            </div>
+    <div class="card-body">
+    <div class="table-responsive">
+
+    <table class ="table">
+
+        <thead>
+        <tr>
+
+            <th scope="col">#</th>
+            <th scope="col">사업명</th>
+            <th scope="col">요구사항1</th>
+            <th scope="col">요구사항2</th>
+            <th scope="col">요구사항3</th>
+            <th scope="col">사업기간</th>
+            <th scope="col">지원금액/월</th>
+            <th scope="col">총지원금</th>
+            <th scope="col">참고사항</th>
+            <th scope="col">수정</th>
+
+        </tr>
+
+        </thead>
+        <tbody>
+
+
+        {% for works in object_list %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{works.work_name}}</td>
+                <td>{{works.Requirements1}}</td>
+                <td>{{works.Requirements2}}</td>
+                <td>{{works.Requirements3}}</td>
+                <td>{{works.support_period}}개월</td>
+                <td>{{works.support_amount|intcomma}}원</td>
+                <td>{{works.support_amount|mul:works.support_period|intcomma}}원</td>
+                <td>{{works.memo}}</td>
+                <td><a href="{% url 'supports_update' pk=works.id  %}" class ="btn btn-success btn-sm">수정</a> </td>
+
+
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+    <div class="x290">
+
+    <div class="card shadow mb-4">
+            <div class="card-header py-2">
+              <h6 class="m-1 font-weight-bold text-primary">나의 고객정보</h6>
+                <div class="text-right">
+                    <a class="small" href="{% url 'supports_create'%}">사업 등록하기</a>
+                </div>
+            </div>
+    <div class="card-body">
+    <div class="table-responsive">
+
+{% for works in object_list %}
+  <table class="type09 ">
+
+    <thead>
+        <tr>
+
+            <th scope="col">항목</th>
+            <th scope="col">내용</th>
+
+        </tr>
+
+    </thead>
+
+    <tr>
+        <th scope="row">#</th>
+        <td>{{forloop.counter}}</td>
+    </tr>
+    <tr>
+        <th scope="row">사업명</th>
+        <td>{{works.work_name}}</td>
+    </tr>
+
+    <tr>
+        <th scope="row">요구사항1</th>
+        <td>{{works.Requirements1}}</td>
+    </tr>
+    <tr>
+        <th scope="row">요구사항2</th>
+        <td>{{works.Requirements2}}</td>
+    </tr>
+
+    <tr>
+        <th scope="row">요구사항3</th>
+        <td>{{works.Requirements3}}</td>
+    </tr>
+    <tr>
+        <th scope="row">사업기간</th>
+        <td>{{works.support_period}}개월</td>
+    </tr>
+    <tr>
+        <th scope="row">지원금액/월</th>
+        <td>{{works.support_amount|intcomma}}원</td>
+    </tr>
+    <tr>
+        <th scope="row">총지원금</th>
+        <td>{{works.support_amount|mul:works.support_period|intcomma}}원</td>
+    </tr>
+    <tr>
+        <th scope="col">참고사항</th>
+        <td>{{works.memo}}</td>
+    </tr>
+    <tr>
+        <th scope="row">수정</th>
+        <td>수정 삭제</td>
+    </tr>
+
+
+   </table>
+
+<p></p>
+{% endfor %}
+
+    </div>
+    </div>
+    </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+{% block pagination %}
+  {% if is_paginated %}
+    <ul class="pagination justify-content-center pagination-sm">
+        {% if page_obj.has_previous %}
+          <li class="page-item">
+              <a class="page-link" href="{% url 'supportslist' %}?page={{ page_obj.previous_page_number }}" tabindex="-1">Previous</a>
+          </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        {% endif %}
+
+        {% for object in page_obj.paginator.page_range %}
+            <li class="page-item {% if page_obj.supportslist == forloop.counter %}disabled{% endif %}">
+                <a class="page-link" href="{{ request.path }}?page={{ forloop.counter }}">{{ forloop.counter }}</a>
+            </li>
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+          <li class="page-item">
+              <a class="page-link" href="{% url 'supportslist' %}?page={{ page_obj.next_page_number }}">Next</a>
+          </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" href="#">Next</a>
+        </li>
+        {% endif %}
+    </ul>
+  {% endif %}
+{% endblock %}
+
+

@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+<body class="bg-gradient-primary">
+
+                <h1 class="h3 mb-2 text-gray-800">나의 정보</h1>
+                   <div class ="btn-group">
+    <a href = "" class="btn btn-info">{{user.user_name}}님 환영합니다</a>&nbsp
+</div>
+
+
+<p></p>
+
+<div class="content">
+<div class="x700">
+<table class ="table">
+    <thead>
+        <tr>
+
+
+            <th scope="col">ID</th>
+            <th scope="col">등록일</th>
+            <th scope="col">이름</th>
+            <th scope="col">소속</th>
+            <th scope="col">연락처</th>
+            <th scope="col">이메일</th>
+            <th scope="row">추천인</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+    {% for user in object_list %}
+            <tr>
+
+
+                <td>{{user.username}}</td>
+                <td>{{user.time_stamp|date:"Y-m-d"}}</td>
+                <td>{{user.user_name}}</td>
+                <td>{{user.team}}</td>
+                <td>{{user.phone}}</td>
+                <td>{{user.email}}</td>
+                <td>{{sales.referrer_name}}</td>
+
+            </tr>
+    {% endfor %}
+
+
+
+    </tbody>
+
+</table>
+    </div>
+
+
+<div class="x290">
+
+{% for user in object_list %}
+  <table class="type09 ">
+    <thead>
+        <tr>
+
+            <th scope="col">항목</th>
+            <th scope="col">내용</th>
+
+        </tr>
+
+    </thead>
+
+    <tr>
+        <th scope="row">ID</th>
+         <td>{{user.username}}</td>
+    </tr>
+    <tr>
+        <th scope="row">등록일</th>
+        <td>{{user.time_stamp|date:"Y-m-d"}}</td>
+    </tr>
+    <tr>
+        <th scope="row">이름</th>
+        <td>{{user.user_name}}</td>
+    </tr>
+    <tr>
+        <th scope="row">소속</th>
+        <td>{{user.team}}</td>
+    </tr>
+    <tr>
+        <th scope="row">연락처</th>
+        <td>{{user.phone}}</td>
+    </tr>
+    <tr>
+        <th scope="row">이메일</th>
+        <td>{{user.email}}</td>
+    </tr>
+    <tr>
+        <th scope="row">추천인</th>
+        <td>{{sales.referrer_name}}</td>
+    </tr>
+
+
+   </table>
+
+<p></p>
+{% endfor %}
+
+    </div>
+
+
+
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+{% block pagination %}
+  {% if is_paginated %}
+    <ul class="pagination justify-content-center pagination-sm">
+        {% if page_obj.has_previous %}
+          <li class="page-item">
+              <a class="page-link" href="{% url 'userlist' %}?page={{ page_obj.previous_page_number }}" tabindex="-1">Previous</a>
+          </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        {% endif %}
+
+        {% for object in page_obj.paginator.page_range %}
+            <li class="page-item {% if page_obj.userlist == forloop.counter %}disabled{% endif %}">
+                <a class="page-link" href="{{ request.path }}?page={{ forloop.counter }}">{{ forloop.counter }}</a>
+            </li>
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+          <li class="page-item">
+              <a class="page-link" href="{% url 'userlist' %}?page={{ page_obj.next_page_number }}">Next</a>
+          </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" href="#">Next</a>
+        </li>
+        {% endif %}
+    </ul>
+  {% endif %}
+
+
+               </div>
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
+
+

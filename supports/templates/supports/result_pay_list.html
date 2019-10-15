@@ -1,0 +1,247 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load humanize %}
+{%load mathfilters %}
+
+
+<div class="content">
+    <div class="x700">
+    <div class="card shadow mb-4">
+            <div class="card-header py-2">
+              <h6 class="m-1 font-weight-bold text-primary">수수료 입금목록</h6>
+
+                <form action="" method="get" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control"  name="date" autocomplete="off"  list="sname">&nbsp
+                            <datalist id="sname">
+                            <option value="지원금 입금">
+                            <option value="수수료 입금">
+                            <option value="배당 지급">
+                            </datalist>
+                        <input type="date" class="form-control"  name="start_date" value="" autocomplete="off" placeholder="yyyy-mm-dd">&nbsp -&nbsp
+                        <input type="date" class="form-control" name="end_date" value="" autocomplete="off" placeholder="yyyy-mm-dd">
+                 &nbsp  <button class="btn btn-primary" type="text"><i class="fas fa-search fa-sm"></i></button>
+                    </div>
+                </form>
+            </div>
+    <div class="card-body">
+    <div class="table-responsive">
+
+    <table class ="table" style="font-size:x-small">
+
+        <thead>
+        <tr>
+             <th colspan="4"></th>
+             <th colspan="2">지원금</th>
+             <th colspan="3">수수료</th>
+             <th colspan="4">배당</th>
+             <th colspan="2">기타</th>
+        </tr>
+        <tr>
+
+            <th scope="col">#</th>
+            <th scope="col">회사</th>
+            <th scope="col">사업</th>
+            <th scope="col">영업자</th>
+            <th scope="col">입금일</th>
+            <th scope="col">입금</th>
+            <th scope="col">비율(%)</th>
+            <th scope="col">입금일</th>
+            <th scope="col">금액</th>
+            <th scope="col">비율(%)</th>
+            <th scope="col">지급일</th>
+            <th scope="col">금액</th>
+            <th scope="col">차인지급</th>
+            <th scope="col">수정일</th>
+            <th scope="col">할일</th>
+
+
+        </tr>
+
+        </thead>
+        <tbody>
+
+
+        {% for result in object_list %}
+            <tr>
+                <td>{{result.work_name.id}}</td>
+                <td>{{result.work_name.company}}</td>
+                <td>{{result.work_name.work_name}}</td>
+                <td>{{result.work_name.company.sales}}</td>
+                <td>{{result.amount_date|date:"y/m/d"}}</td>
+                <td>{{result.amount|intcomma}}원</td>
+                <td>{{result.work_name.pay_per}}%</td>
+                <td>{{result.pay_date|date:"y/m/d"}}</td>
+                <td>{{result.pay|intcomma}}원</td>
+                <td>{{result.work_name.fee_per}}%</td>
+                <td>{{result.fee_date|date:"y/m/d"}}</td>
+                <td>{{result.fee|intcomma}}원</td>
+                <td>{{result.fee_tax|intcomma}}원</td>
+                <td>{{result.updated|date:"y/m/d"}}</td>
+                <td><a href="{% url 'result_pay_list_update' pk=result.id %}" class ="btn btn-warning btn-sm">수정</a></td>
+
+
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+    <div class="x290">
+
+    <div class="card shadow mb-4">
+            <div class="card-header py-2">
+              <h6 class="m-1 font-weight-bold text-primary">수수료 입금목록</h6>
+
+                <form action="" method="get" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control"  name="date" autocomplete="off"  list="sname">&nbsp
+                            <datalist id="sname">
+                            <option value="지원금 입금">
+                            <option value="수수료 입금">
+                            <option value="배당 지급">
+                            </datalist>
+                        <input type="date" class="form-control"  name="start_date" value="" autocomplete="off" placeholder="yyyy-mm-dd">&nbsp -&nbsp
+                        <input type="date" class="form-control" name="end_date" value="" autocomplete="off" placeholder="yyyy-mm-dd">
+                 &nbsp  <button class="btn btn-primary" type="text"><i class="fas fa-search fa-sm"></i></button>
+                    </div>
+                </form>
+
+            </div>
+    <div class="card-body">
+    <div class="table-responsive">
+
+{% for result in object_list %}
+    <table class="type09 ">
+
+    <thead>
+        <tr>
+
+            <th scope="col">항목</th>
+            <th scope="col">내용</th>
+
+        </tr>
+
+    </thead>
+
+    <tr>
+        <th scope="row">#</th>
+        <td>{{forloop.counter}}</td>
+    </tr>
+    <tr>
+        <th scope="row">회사명</th>
+        <td>{{result.work_name.company}}</td>
+    </tr>
+    <tr>
+        <th scope="row">사업명</th>
+        <td>{{result.work_name.work_name}}</td>
+    </tr>
+    <tr>
+        <th scope="row">영업자</th>
+        <td>{{result.work_name.company.sales}}</td>
+    </tr>
+
+    <tr>
+        <th scope="row">지원금입금일</th>
+        <td>{{result.amount_date|date:"y/m/d"}}</td>
+    </tr>
+    <tr>
+        <th scope="row">지원금</th>
+        <td>{{result.amount|intcomma}}원</td>
+    </tr>
+
+    <tr>
+        <th scope="row">수수료율</th>
+        <td>{{result.work_name.pay_per}}%</td>
+    </tr>
+    <tr>
+        <th scope="row">수수료입금일</th>
+        <td>{{result.pay_date|date:"y/m/d"}}</td>
+    </tr>
+    <tr>
+        <th scope="row">수수료</th>
+        <td>{{result.pay|intcomma}}원</td>
+    </tr>
+    <tr>
+        <th scope="row">배당율(%)</th>
+        <td>{{result.work_name.fee_per}}%</td>
+    </tr>
+    <tr>
+        <th scope="row">배당지급</th>
+         <td>{{result.fee_date|date:"y/m/d"}}</td>
+    </tr>
+    <tr>
+        <th scope="row">배당</th>
+        <td>{{result.fee|intcomma}}원</td>
+    </tr>
+    <tr>
+        <th scope="row">차인지급액</th>
+        <td>{{result.fee_tax|intcomma}}원</td>
+    </tr>
+    <tr>
+        <th scope="row">수정일</th>
+        <td>{{result.updated|date:"y/m/d"}}</td>
+    </tr>
+
+
+    <tr>
+        <th scope="row">할일</th>
+        <td><a href="{% url 'result_pay_list_update' pk=result.id %}" class ="btn btn-warning btn-sm">수정</a></td>
+    </tr>
+
+    </table>
+<p></p>
+{% endfor %}
+
+    </div>
+    </div>
+    </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+{% block pagination %}
+  {% if is_paginated %}
+    <ul class="pagination justify-content-center pagination-sm">
+        {% if page_obj.has_previous %}
+          <li class="page-item">
+              <a class="page-link" href="{% url 'result_pay_list' %}?page={{ page_obj.previous_page_number }}" tabindex="-1">Previous</a>
+          </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        {% endif %}
+
+        {% for object in page_obj.paginator.page_range %}
+            <li class="page-item {% if page_obj.result_pay_list == forloop.counter %}disabled{% endif %}">
+                <a class="page-link" href="{{ request.path }}?page={{ forloop.counter }}">{{ forloop.counter }}</a>
+            </li>
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+          <li class="page-item">
+              <a class="page-link" href="{% url 'result_pay_list' %}?page={{ page_obj.next_page_number }}">Next</a>
+          </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" href="#">Next</a>
+        </li>
+        {% endif %}
+    </ul>
+  {% endif %}
+{% endblock %}
+
+

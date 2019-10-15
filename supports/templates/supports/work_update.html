@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<body class="bg-gradient-primary">
+
+  <div class="container">
+    <div class="card o-hidden border-0 shadow-lg my-2">
+      <div class="card-body p-0">
+        <!-- Nested Row within Card Body -->
+        <div class="row">
+          <div class="col-lg-5 d-none d-lg-block">
+            <img class="img-fluid px-3 px-sm-2 mt-2 mb-2" style="width: 30rem;" src="{%static 'accounts/img/undraw_posting_photo.svg' %}">
+          </div>
+          <div class="col-lg-7">
+            <div class="p-5">
+              <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-2">지원사업수정하기</h1>
+              </div>
+              <small>
+              <form class="user" action="" method="post" autocomplete="off">
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    사업명*{{ form.work_name |as_crispy_field}}
+                  </div>
+                  <div class="col-sm-6">
+
+                  </div>
+                </div>
+
+                <div class="form-group">
+                    {{ form.Requirements1 |as_crispy_field}}
+                    {{ form.Requirements2 |as_crispy_field}}
+                    {{ form.Requirements3 |as_crispy_field}}
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    사업기간*{{ form.support_period |as_crispy_field}}
+                  </div>
+                  <div class="col-sm-6">
+                    지원금액/월*{{ form.support_amount |as_crispy_field}}
+                  </div>
+                </div>
+                <div class="form-group">
+                  {{ form.memo|as_crispy_field }}
+                </div>
+
+                {% csrf_token %}
+                <input class="btn btn-primary btn-user btn-block" style="width:100%" type="submit" value="수정">
+
+              </form>
+              </small>
+              <hr>
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}

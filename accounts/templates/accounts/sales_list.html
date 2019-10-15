@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<div class="content">
+    <div class="x700">
+    <div class="card shadow mb-4">
+            <div class="card-header py-2">
+              <h6 class="m-1 font-weight-bold text-primary">직원관리정보</h6>
+
+            </div>
+    <div class="card-body">
+    <div class="table-responsive">
+
+    <table class ="table">
+
+        <thead>
+        <tr>
+
+            <th scope="col">#</th>
+            <th scope="col">등록일</th>
+            <th scope="col">소속</th>
+            <th scope="col">이름</th>
+            <th scope="col">연락처</th>
+            <th scope="col">추천인</th>
+            <th scope="col">메모</th>
+            <th scope="col">수정</th>
+
+
+        </tr>
+
+        </thead>
+        <tbody>
+
+
+        {% for sales in object_list %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{sales.time_stamp|date}}</td>
+                <td>{{sales.team}}</td>
+                <td><a href="{% url 'sales_total' pk=sales.id %}">{{sales.name}}</a></td>
+                <td>{{sales.phone}}</td>
+                <td>{{sales.referrer_name}}</td>
+                <td>{{sales.memo}}</td>
+                <td><a href="{% url 'salesman_update' pk=sales.id %}" class ="btn btn-success btn-sm">수정</a></td>
+
+
+
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+    <div class="x290">
+
+    <div class="card shadow mb-4">
+            <div class="card-header py-2">
+              <h6 class="m-1 font-weight-bold text-primary">나의 고객정보</h6>
+
+            </div>
+    <div class="card-body">
+    <div class="table-responsive">
+
+{% for sales in object_list %}
+  <table class="type09 ">
+
+    <thead>
+        <tr>
+
+            <th scope="col">항목</th>
+            <th scope="col">내용</th>
+
+        </tr>
+
+    </thead>
+
+    <tr>
+        <th scope="row">#</th>
+        <td>{{forloop.counter}}</td>
+    </tr>
+    <tr>
+        <th scope="row">등록일</th>
+        <td>{{sales.time_stamp|date}}</td>
+    </tr>
+
+    <tr>
+        <th scope="row">소속</th>
+        <td>{{sales.team}}</td>
+    </tr>
+    <tr>
+        <th scope="row">이름</th>
+        <td><a href="{% url 'sales_total' pk=sales.id %}">{{sales.name}}</a></td>
+    </tr>
+
+    <tr>
+        <th scope="row">연락처</th>
+        <td>{{sales.phone}}</td>
+    </tr>
+    <tr>
+        <th scope="row">추천인</th>
+        <td>{{sales.referrer_name}}</td>
+    </tr>
+    <tr>
+        <th scope="row">메모</th>
+        <td>{{sales.name}}</td>
+    </tr>
+    <tr>
+        <th scope="row">수정</th>
+        <td><a href="{% url 'salesman_update' pk=sales.id %}" class ="btn btn-success btn-sm">수정</a></td>
+    </tr>
+   </table>
+
+<p></p>
+{% endfor %}
+
+    </div>
+    </div>
+    </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+{% block pagination %}
+  {% if is_paginated %}
+    <ul class="pagination justify-content-center pagination-sm">
+        {% if page_obj.has_previous %}
+          <li class="page-item">
+              <a class="page-link" href="{% url 'salesman' %}?page={{ page_obj.previous_page_number }}" tabindex="-1">Previous</a>
+          </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        {% endif %}
+
+        {% for object in page_obj.paginator.page_range %}
+            <li class="page-item {% if page_obj.salesman == forloop.counter %}disabled{% endif %}">
+                <a class="page-link" href="{{ request.path }}?page={{ forloop.counter }}">{{ forloop.counter }}</a>
+            </li>
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+          <li class="page-item">
+              <a class="page-link" href="{% url 'salesman' %}?page={{ page_obj.next_page_number }}">Next</a>
+          </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" href="#">Next</a>
+        </li>
+        {% endif %}
+    </ul>
+  {% endif %}
+{% endblock %}
+
+

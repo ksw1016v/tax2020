@@ -1,0 +1,489 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load humanize %}
+{%load mathfilters %}
+
+
+
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">{% for sales in total_sales %}{{sales.name}}님 {% endfor %}</h1>
+
+          </div>
+
+          <!-- Content Row -->
+          <div class="row">
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">고객사</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="">{{total_customer_count.total_count|intcomma}}사 </a></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+           
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">진행사업</div>
+                      <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><a href="">{{workings.total_count}} 개</a></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pending Requests Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">누적계약</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="">{{working_result.total_count}}  개</a></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <div class="row">
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">총 지원금</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="">{{total_result.total_amount|intcomma}}원 / {{total_result.total_amount_count|intcomma}}건 </a></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">수수료 수금</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="">{{total_result.total_pay|intcomma}}원 / {{total_result.total_pay_count|intcomma}} 건</a></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-danger  shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">수수료 미수금</div>
+                      <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><a href="">{{total_no_result.total_pay|intcomma}}원</a></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pending Requests Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-secondary  shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">지급 배당</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="">{{total_result.total_fee|intcomma}}원</a></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+<div class="content">
+    <div class="x700">
+    <div class="card shadow mb-4">
+            <div class="card-header py-2">
+              <h6 class="m-1 font-weight-bold text-primary">나의 고객정보</h6>
+            </div>
+    <div class="card-body">
+    <div class="table-responsive">
+
+    <table class ="table">
+
+        <thead>
+        <tr>
+
+            <th scope="col">#</th>
+            <th scope="col">회사명</th>
+            <th scope="col">대표자</th>
+            <th scope="col">연락처</th>
+            <th scope="col">주소</th>
+
+
+        </tr>
+
+        </thead>
+        <tbody>
+
+
+        {% for customer in total_c %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{customer.company}}</td>
+                <td>{{customer.name}}</td>
+                <td>{{customer.phone}}</td>
+                <td>{{customer.address}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+    <div class="x290">
+
+    <div class="card shadow mb-4">
+            <div class="card-header py-2">
+              <h6 class="m-1 font-weight-bold text-primary">나의 고객정보</h6>
+
+            </div>
+    <div class="card-body">
+    <div class="table-responsive">
+
+{% for customer in total_c %}
+  <table class="type09 ">
+
+    <thead>
+        <tr>
+
+            <th scope="col">항목</th>
+            <th scope="col">내용</th>
+
+        </tr>
+
+    </thead>
+
+    <tr>
+        <th scope="row">#</th>
+        <td>{{forloop.counter}}</td>
+    </tr>
+    <tr>
+        <th scope="row">회사명</th>
+        <td>{{customer.company}}</td>
+    </tr>
+    <tr>
+        <th scope="row">대표자</th>
+        <td>{{customer.name}}</td>
+    </tr>
+    <tr>
+        <th scope="row">연락처</th>
+        <td>{{customer.phone}}</td>
+    </tr>
+    <tr>
+        <th scope="row">주소</th>
+        <td>{{customer.address}}</td>
+    </tr>
+   </table>
+
+<p></p>
+{% endfor %}
+
+    </div>
+    </div>
+    </div>
+    </div>
+</div>
+            
+
+<div class="content">
+    <div class="x700">
+    <div class="card shadow mb-4">
+            <div class="card-header py-2">
+              <h6 class="m-1 font-weight-bold text-primary">진행사업</h6>
+            </div>
+    <div class="card-body">
+    <div class="table-responsive">
+
+    <table class ="table">
+
+        <thead>
+        <tr>
+
+            <th scope="col">#</th>
+            <th scope="col">회사명</th>
+            <th scope="col">사업명</th>
+            <th scope="col">진행상황</th>
+            <th scope="col">수수료율</th>
+            <th scope="col">배당율</th>
+            <th scope="col">메모</th>
+
+
+        </tr>
+
+        </thead>
+        <tbody>
+
+
+        {% for working in total_w %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{working.company}}</td>
+                <td>{{working.work_name}}</td>
+                <td>{{working.ing}}</td>
+                <td>{{working.pay_per}}</td>
+                <td>{{working.fee_per}}</td>
+                <td>{{working.memo}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+    <div class="x290">
+
+    <div class="card shadow mb-4">
+            <div class="card-header py-2">
+              <h6 class="m-1 font-weight-bold text-primary">진행사업</h6>
+
+            </div>
+    <div class="card-body">
+    <div class="table-responsive">
+
+{% for working in total_w %}
+  <table class="type09 ">
+
+    <thead>
+        <tr>
+
+            <th scope="col">항목</th>
+            <th scope="col">내용</th>
+
+        </tr>
+
+    </thead>
+
+    <tr>
+        <th scope="row">#</th>
+        <td>{{forloop.counter}}</td>
+    </tr>
+    <tr>
+        <th scope="row">회사명</th>
+        <td>{{working.company}}</td>
+    </tr>
+    <tr>
+        <th scope="row">진행사업</th>
+        <td>{{working.work_name}}</td>
+    </tr>
+    <tr>
+        <th scope="row">진행상황</th>
+        <td>{{working.ing}}</td>
+    </tr>
+    <tr>
+        <th scope="row">수수료율</th>
+        <td>{{working.pay_per}}</td>
+    </tr>
+    <tr>
+        <th scope="row">배당율</th>
+        <td>{{working.fee_per}}</td>
+    </tr>
+    <tr>
+        <th scope="row">메모</th>
+        <td>{{working.memo}}</td>
+    </tr>
+   </table>
+
+<p></p>
+{% endfor %}
+
+    </div>
+    </div>
+    </div>
+    </div>
+</div>            
+            
+
+            
+            
+            
+
+<div class="content">
+    <div class="x700">
+    <div class="card shadow mb-4">
+            <div class="card-header py-2">
+              <h6 class="m-1 font-weight-bold text-primary">사업결과</h6>
+            </div>
+    <div class="card-body">
+    <div class="table-responsive">
+
+    <table class ="table">
+
+        <thead>
+        <tr>
+
+            <th scope="col">#</th>
+            <th scope="col">회사명</th>
+            <th scope="col">사업명</th>
+            <th scope="col">진행상황</th>
+            <th scope="col">지원금</th>
+            <th scope="col">수수료</th>
+            <th scope="col">배당</th>
+            <th scope="col">차인지급</th>
+
+
+        </tr>
+
+        </thead>
+        <tbody>
+
+
+        {% for result in total_r %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{result.work_name.company}}</td>
+                <td>{{result.work_name.work_name}}</td>
+                <td>{{result.work_result}}</td>
+                <td>{{result.amount|intcomma}}원</td>
+                <td>{{result.pay|intcomma}}원</td>
+                <td>{{result.fee|intcomma}}원</td>
+                <td>{{result.fee_tax|intcomma}}원</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+    <div class="x290">
+
+    <div class="card shadow mb-4">
+            <div class="card-header py-2">
+              <h6 class="m-1 font-weight-bold text-primary">진행사업</h6>
+
+            </div>
+    <div class="card-body">
+    <div class="table-responsive">
+
+{% for working in total_w %}
+  <table class="type09 ">
+
+    <thead>
+        <tr>
+
+            <th scope="col">항목</th>
+            <th scope="col">내용</th>
+
+        </tr>
+
+    </thead>
+
+    <tr>
+        <th scope="row">#</th>
+        <td>{{forloop.counter}}</td>
+    </tr>
+    <tr>
+        <th scope="row">회사명</th>
+        <td>{{working.company}}</td>
+    </tr>
+    <tr>
+        <th scope="row">진행사업</th>
+        <td>{{working.work_name}}</td>
+    </tr>
+    <tr>
+        <th scope="row">진행상황</th>
+        <td>{{working.ing}}</td>
+    </tr>
+    <tr>
+        <th scope="row">수수료율</th>
+        <td>{{working.pay_per}}</td>
+    </tr>
+    <tr>
+        <th scope="row">배당율</th>
+        <td>{{working.fee_per}}</td>
+    </tr>
+    <tr>
+        <th scope="row">메모</th>
+        <td>{{working.memo}}</td>
+    </tr>
+   </table>
+
+<p></p>
+{% endfor %}
+
+    </div>
+    </div>
+    </div>
+    </div>
+</div>            
+            
+            
+            
+{% endblock %}
+
+
+
+

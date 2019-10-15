@@ -1,0 +1,314 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load humanize %}
+{%load mathfilters %}
+
+
+<div class="content">
+    <div class="x700">
+    <div class="card shadow mb-4">
+            <div class="card-header py-2">
+              <h6 class="m-1 font-weight-bold text-primary">지원금 입금 </h6>
+
+                <form action="" method="get" class="form-inline">
+                    <div class="form-group">
+                        <input type="date" class="form-control"  name="start_date" value="" autocomplete="off" placeholder="yyyy-mm-dd">&nbsp -&nbsp
+                        <input type="date" class="form-control" name="end_date" value="" autocomplete="off" placeholder="yyyy-mm-dd">
+                 &nbsp  <button class="btn btn-primary" type="text"><i class="fas fa-search fa-sm"></i></button>
+                    </div>
+                </form>
+            </div>
+    <div class="card-body">
+    <div class="table-responsive">
+
+    <div class="container">
+    <table class ="table" style="font-size:x-small">
+
+        <thead>
+         지원금 총 입금/ 미입금
+        <tr>
+            <th scope="col">입금 건</th>
+            <th scope="col">입금</th>
+            <th scope="col">미입금 건</th>
+            <th scope="col">미입금</th>
+        </tr>
+
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{result_amount.total_amount_count|intcomma}}건</td>
+            <td>{{result_amount.total_amount|intcomma}}원</td>
+            <td>{{result_amount1.total_amount_count1|intcomma}}건</td>
+            <td>{{result_amount1.total_amount1|intcomma}}원</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+
+     <div class="row">
+          <div class="col-lg-6">
+
+     <table class ="table" style="font-size:x-small">
+        <thead>
+        사업별 입금
+        <tr>
+            <th scope="col">사업명</th>
+            <th scope="col">입금 건수</th>
+            <th scope="col">입금</th>
+        </tr>
+
+        </thead>
+
+        <tbody>
+        {% for amount_work_name in result_amount_work_name %}
+        <tr>
+            <td>{{amount_work_name.work_name__work_name}}</td>
+            <td>{{amount_work_name.total_amount_count2|intcomma}}건</td>
+            <td>{{amount_work_name.total_amount2|intcomma}}원</td>
+
+        </tr>
+        {% endfor %}
+        </tbody>
+         </table>
+         </div>
+
+       <div class="col-lg-6">
+
+         <table class ="table" style="font-size:x-small">
+        <thead>
+        사업별 미입금
+        <tr>
+            <th scope="col">사업명</th>
+            <th scope="col">미입금 건수</th>
+            <th scope="col">미입금</th>
+        </tr>
+
+        </thead>
+        {% for amount_work_name in result_amount_work_name1%}
+         <tr>
+            <td>{{amount_work_name.work_name__work_name}}</td>
+            <td>{{amount_work_name.total_amount_count2|intcomma}}건</td>
+            <td>{{amount_work_name.total_amount2|intcomma}}원</td>
+         </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+    </div></div>
+
+    <br>
+     <div class="row">
+        <div class="col-lg-6">
+     <table class ="table" style="font-size:x-small">
+
+        <thead>
+        회사별 입금
+        <tr>
+            <th scope="col">회사명</th>
+            <th scope="col">입금 건수</th>
+            <th scope="col">입금</th>
+            <th scope="col"></th>
+        </tr>
+
+        </thead>
+
+        <tbody>
+        {% for amount_company in result_amount_company %}
+        <tr>
+
+            <td>{{amount_company.work_name__company__company}}</td>
+            <td>{{amount_company.total_amount_count3|intcomma}}건</td>
+            <td>{{amount_company.total_amount3|intcomma}}원</td>
+            {% endfor %}
+         </tr>
+        </tbody>
+        </table>
+        </div>
+        <div class="col-lg-6">
+
+         <table class ="table" style="font-size:x-small">
+        <thead>
+        회사별 미입금
+        <tr>
+            <th scope="col">회사명</th>
+            <th scope="col">미입금 건수</th>
+            <th scope="col">미입금</th>
+        </tr>
+
+        </thead>
+        {% for amount_company in result_amount_company1%}
+         <tr>
+            <td>{{amount_company.work_name__company__company}}</td>
+            <td>{{amount_company.total_amount_count3|intcomma}}건</td>
+            <td>{{amount_company.total_amount3|intcomma}}원</td>
+         </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+    </div>
+
+    </div>
+
+    </div>
+    </div>
+    </div>
+</div>
+
+
+    <div class="x290">
+
+    <div class="card shadow mb-4">
+            <div class="card-header py-2">
+              <h6 class="m-1 font-weight-bold text-primary">계약 현황</h6>
+
+                <form action="" method="get" class="form-inline">
+                    <div class="form-group">
+                        <input type="date" class="form-control"  name="start_date" value="" autocomplete="off" placeholder="yyyy-mm-dd">&nbsp -&nbsp
+                        <input type="date" class="form-control" name="end_date" value="" autocomplete="off" placeholder="yyyy-mm-dd">
+                 &nbsp  <button class="btn btn-primary" type="text"><i class="fas fa-search fa-sm"></i></button>
+                    </div>
+                </form>
+
+            </div>
+    <div class="card-body">
+    <div class="table-responsive">
+
+{% for result in object_list %}
+    <table class="type09 ">
+
+    <thead>
+        <tr>
+
+            <th scope="col">항목</th>
+            <th scope="col">내용</th>
+
+        </tr>
+
+    </thead>
+
+    <tr>
+        <th scope="row">#</th>
+        <td>{{forloop.counter}}</td>
+    </tr>
+    <tr>
+        <th scope="row">회사</th>
+        <td>{{result.work_name.company}}</td>
+    </tr>
+
+    <tr>
+        <th scope="row">사업</th>
+        <td>{{result.work_name.work_name}}</td>
+    </tr>
+    <tr>
+        <th scope="row">마감일</th>
+        <td>{{result.work_date|date:"y/m/d"}}</td>
+    </tr>
+
+    <tr>
+        <th scope="row">내용</th>
+        <td>{{result.work_category}}</td>
+    </tr>
+    <tr>
+        <th scope="row">결과</th>
+        <td>{{result.work_result}}</td>
+    </tr>
+    <tr>
+        <th scope="row">신청</th>
+        <td>{{result.amount|intcomma}}원</td>
+    </tr>
+    <tr>
+        <th scope="row">입금예정</th>
+        <td>{{result.amount_duedate|date:"y/m/d"}}</td>
+    </tr>
+    <tr>
+        <th scope="row">입금일</th>
+        <td>{{result.amount_date|date:"y/m/d"}}</td>
+    </tr>
+    <tr>
+        <th scope="row">메모</th>
+        <td>{{result.amount_memo}}</td>
+    </tr>
+    <tr>
+        <th scope="row">등록일</th>
+        <td>{{result.created|date:"y/m/d"}}</td>
+    </tr>
+    <tr>
+        <th scope="row">수정일</th>
+        <td>{{result.updated|date:"y/m/d"}}</td>
+    </tr>
+
+
+    <tr>
+        <th scope="row">할일</th>
+        <td><a href="" class ="btn btn-success btn-sm">수정</a></td>
+    </tr>
+
+    </table>
+<p></p>
+{% endfor %}
+
+    </div>
+    </div>
+    </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+{% block pagination %}
+  {% if is_paginated %}
+    <ul class="pagination justify-content-center pagination-sm">
+        {% if page_obj.has_previous %}
+          <li class="page-item">
+              <a class="page-link" href="{% url 'dashborad_total_amount' %}?page={{ page_obj.previous_page_number }}" tabindex="-1">Previous</a>
+          </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        {% endif %}
+
+        {% for object in page_obj.paginator.page_range %}
+            <li class="page-item {% if page_obj.dashborad_total_amount == forloop.counter %}disabled{% endif %}">
+                <a class="page-link" href="{{ request.path }}?page={{ forloop.counter }}">{{ forloop.counter }}</a>
+            </li>
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+          <li class="page-item">
+              <a class="page-link" href="{% url 'dashborad_total_amount' %}?page={{ page_obj.next_page_number }}">Next</a>
+          </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" href="#">Next</a>
+        </li>
+        {% endif %}
+    </ul>
+  {% endif %}
+{% endblock %}
+
+
+
+
+
+
+        {{totals}}
+
+        </tbody>
+    </table>
+
+    </div>
+    </div>
+    </div>
+</div>
+</body>
+</html>

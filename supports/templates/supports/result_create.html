@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% load humanize %}
+{%load mathfilters %}
+
+
+<body class="bg-gradient-primary">
+
+  <div class="container">
+    <div class="card o-hidden border-0 shadow-lg my-2">
+      <div class="card-body p-0">
+        <!-- Nested Row within Card Body -->
+        <div class="row">
+          <div class="col-lg-6 d-none d-lg-block">
+
+                  {% for result in results %}
+
+                  <table class="type09 "  width="450">
+                    <thead>
+                        <tr>
+                        <th scope="col" colspan="6" ></th>
+                        </tr>
+                     </thead>
+
+                    <tr>
+                         <th scope="row">구분</th>
+                         <td>{{result.company.category}}</td>
+                         <th scope="row">영업자</th>
+                         <td>{{result.company.sales}}</td>
+                    </tr>
+
+                    <tr>
+                         <th scope="row">회사</th>
+                         <td>{{result.company}}</td>
+                         <th scope="row">대표자</th>
+                         <td>{{result.company.name}}</td>
+                    </tr>
+                    <tr>
+                         <th scope="row">휴대폰</th>
+                         <td>{{result.company.phone}}</td>
+                         <th scope="row">지역</th>
+                         <td>{{result.company.location}}</td>
+                    </tr>
+                      <tr>
+                         <th scope="row">사업</th>
+                         <td>{{result.work_name.work_name}}</td>
+                         <th scope="row">지원금</th>
+                         <td>{{result.support_amount|intcomma}}원</td>
+                    </tr>
+                    <tr>
+                         <th scope="row">수수료(%)</th>
+                         <td>{{result.pay_per}}%</td>
+                         <th scope="row">배당(%)</th>
+                         <td>{{result.fee_per}}%</td>
+                    </tr>
+                  {% endfor %}
+                  </table>
+            <div class="px-3 px-sm-2 mt-2 mb-2" >
+
+
+    <table class ="table">
+        할일 목록
+        <thead>
+        <tr>
+
+            <th scope="col">#</th>
+            <th scope="col">업무마감일</th>
+            <th scope="col">업무내용</th>
+            <th scope="col">업무결과</th>
+            <th scope="col">업데이트</th>
+
+        </tr>
+
+        </thead>
+        <tbody>
+
+
+        {% for result in resultslist %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{result.work_date}}</td>
+                <td>{{result.work_category}}</td>
+                <td>{{result.work_result}}</td>
+                <td><a href="{% url 'result_update' pk=result.id  %}" class ="btn btn-success btn-sm">수정</a> <a href="" class ="btn btn-danger btn-sm">삭제</a></td>
+
+
+
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+
+            <p></p>
+         </div>
+
+
+          </div>
+          <div class="col-lg-6">
+            <div class="p-5">
+              <div class="text-center">
+                <h1 class="h5 text-gray-900 mb-2">
+                     <p></p>{% for result in results %}{{result.company}}의 {{result.work_name}} 할일{% endfor %}</h1>
+              </div>
+              <small>
+              <form class="user" action="" method="post" autocomplete="off">
+
+                <div class="form-group">
+                업무마감일  {{form.work_date |as_crispy_field}}
+                </div>
+                <div class="form-group">
+                  {{form.work_category |as_crispy_field}}
+                </div>
+                <div class="form-group">
+                  {{form.work_result |as_crispy_field}}
+                </div>
+                <div class="form-group">
+                  {{form.amount |as_crispy_field}}
+                </div>
+                <div class="form-group">
+                 지원금입금예정일  {{form.amount_duedate |as_crispy_field}}
+                </div>
+                <div class="form-group">
+                 지원금입금일{{form.amount_date |as_crispy_field}}
+                </div>
+                <div class="form-group">
+                  {{form.amount_memo |as_crispy_field}}
+                </div>
+
+                {% csrf_token %}
+                <input class="btn btn-primary btn-user btn-block" style="width:100%" type="submit" value="등록">
+
+              </form>
+              </small>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+{% endblock content%}
+
