@@ -13,7 +13,7 @@
     <div class="card-body">
     <div class="table-responsive">
 
-    <table class ="table">
+    <table class ="table" style="font-size:x-small">
 
         <thead>
         <tr>
@@ -40,7 +40,7 @@
         {% for customers in object_list %}
             <tr>
                 <td>{{forloop.counter}}</td>
-                <td>{{customers.time_stamp|date}}</td>
+                <td>{{customers.time_stamp|date:"y/m/d"}}</td>
                 <td>{{customers.sales.name}}</td>
                 <td>{{customers.company}}</td>
                 <td>{{customers.name}}</td>
@@ -93,7 +93,7 @@
     </tr>
     <tr>
         <th scope="row">등록일</th>
-        <td>{{customers.time_stamp|date}}</td>
+        <td>{{customers.time_stamp|date:"y/m/d"}}</td>
     </tr>
 
     <tr>
