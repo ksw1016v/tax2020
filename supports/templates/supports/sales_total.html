@@ -197,12 +197,14 @@
     </div>
 </div>
 
-
     <div class="x290">
+
+<div href="#demo" data-toggle="collapse" class="alert alert-info"><h6 class="m-1 font-weight-bold text-primary">나의 고객정보</h6></div>
+<div id="demo" class="collapse">
 
     <div class="card shadow mb-4">
             <div class="card-header py-2">
-              <h6 class="m-1 font-weight-bold text-primary">나의 고객정보</h6>
+              <h6 class="m-1 font-weight-bold text-primary">나의 고객 리스트입니다.</h6>
 
             </div>
     <div class="card-body">
@@ -251,7 +253,7 @@
     </div>
     </div>
 </div>
-            
+</div>
 
 <div class="content">
     <div class="x700">
@@ -302,10 +304,11 @@
 
 
     <div class="x290">
-
+<div href="#demo1" data-toggle="collapse" class="alert alert-warning"><h6 class="m-1 font-weight-bold text-primary">진행사업</h6></div>
+<div id="demo1" class="collapse">
     <div class="card shadow mb-4">
             <div class="card-header py-2">
-              <h6 class="m-1 font-weight-bold text-primary">진행사업</h6>
+              <h6 class="m-1 font-weight-bold text-primary">업무 진행중인 리스트</h6>
 
             </div>
     <div class="card-body">
@@ -362,17 +365,128 @@
     </div>
     </div>
 </div>            
-            
+ </div>
 
+<div class="content">
+    <div class="x700">
+    <div class="card shadow mb-4">
+            <div class="card-header py-2">
+              <h6 class="m-1 font-weight-bold text-primary">계약완료</h6>
+            </div>
+    <div class="card-body">
+    <div class="table-responsive">
+
+    <table class ="table">
+
+        <thead>
+        <tr>
+
+            <th scope="col">#</th>
+            <th scope="col">회사명</th>
+            <th scope="col">사업명</th>
+            <th scope="col">진행상황</th>
+            <th scope="col">수수료율</th>
+            <th scope="col">배당율</th>
+            <th scope="col">메모</th>
+
+
+        </tr>
+
+        </thead>
+        <tbody>
+
+
+        {% for working in total_rw %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{working.company}}</td>
+                <td>{{working.work_name}}</td>
+                <td>{{working.ing}}</td>
+                <td>{{working.pay_per}}%</td>
+                <td>{{working.fee_per}}%</td>
+                <td>{{working.memo}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+
+    <div class="x290">
+<div href="#demo2" data-toggle="collapse" class="alert alert-danger"><h6 class="m-1 font-weight-bold text-primary">계약완료</h6></div>
+<div id="demo2" class="collapse">
+    <div class="card shadow mb-4">
+            <div class="card-header py-2">
+              <h6 class="m-1 font-weight-bold text-primary">계약 완료된 리스트</h6>
+
+            </div>
+    <div class="card-body">
+    <div class="table-responsive">
+
+{% for working in total_rw %}
+  <table class="type09 ">
+
+    <thead>
+        <tr>
+
+            <th scope="col">항목</th>
+            <th scope="col">내용</th>
+
+        </tr>
+
+    </thead>
+
+    <tr>
+        <th scope="row">#</th>
+        <td>{{forloop.counter}}</td>
+    </tr>
+    <tr>
+        <th scope="row">회사명</th>
+        <td>{{working.company}}</td>
+    </tr>
+    <tr>
+        <th scope="row">진행사업</th>
+        <td>{{working.work_name}}</td>
+    </tr>
+    <tr>
+        <th scope="row">진행상황</th>
+        <td>{{working.ing}}</td>
+    </tr>
+    <tr>
+        <th scope="row">수수료율</th>
+        <td>{{working.pay_per}}%</td>
+    </tr>
+    <tr>
+        <th scope="row">배당율</th>
+        <td>{{working.fee_per}}%</td>
+    </tr>
+    <tr>
+        <th scope="row">메모</th>
+        <td>{{working.memo}}</td>
+    </tr>
+   </table>
+
+<p></p>
+{% endfor %}
+
+    </div>
+    </div>
+    </div>
+    </div>
+</div>
             
-            
+ </div>
             
 
 <div class="content">
     <div class="x700">
     <div class="card shadow mb-4">
             <div class="card-header py-2">
-              <h6 class="m-1 font-weight-bold text-primary">사업결과</h6>
+              <h6 class="m-1 font-weight-bold text-primary">사업결과(수금)</h6>
             </div>
     <div class="card-body">
     <div class="table-responsive">
@@ -418,17 +532,19 @@
 </div>
 
 
-    <div class="x290">
 
+    <div class="x290">
+<div href="#demo3" data-toggle="collapse" class="alert alert-success"><h6 class="m-1 font-weight-bold text-primary">사업결과(수금)</h6></div>
+<div id="demo3" class="collapse">
     <div class="card shadow mb-4">
             <div class="card-header py-2">
-              <h6 class="m-1 font-weight-bold text-primary">사업결과</h6>
+              <h6 class="m-1 font-weight-bold text-primary">수수료 및 배당내역입니다.</h6>
 
             </div>
     <div class="card-body">
     <div class="table-responsive">
 
-{% for working in total_w %}
+{% for result in total_r %}
   <table class="type09 ">
 
     <thead>
@@ -447,27 +563,31 @@
     </tr>
     <tr>
         <th scope="row">회사명</th>
-        <td>{{working.company}}</td>
+        <td>{{result.work_name.company}}</td>
+    </tr>
+    <tr>
+        <th scope="row">사업명</th>
+        <td>{{result.work_name.work_name}}</td>
     </tr>
     <tr>
         <th scope="row">진행사업</th>
-        <td>{{working.work_name}}</td>
+        <td>{{result.work_result}}</td>
     </tr>
     <tr>
-        <th scope="row">진행상황</th>
-        <td>{{working.ing}}</td>
+        <th scope="row">지원금</th>
+        <td>{{result.amount|intcomma}}원</td>
     </tr>
     <tr>
-        <th scope="row">수수료율</th>
-        <td>{{working.pay_per}}</td>
+        <th scope="row">수수료</th>
+        <td>{{result.pay|intcomma}}원</td>
     </tr>
     <tr>
-        <th scope="row">배당율</th>
-        <td>{{working.fee_per}}</td>
+        <th scope="row">배당</th>
+        <td>{{result.fee|intcomma}}원</td>
     </tr>
     <tr>
-        <th scope="row">메모</th>
-        <td>{{working.memo}}</td>
+        <th scope="row">차인지급</th>
+        <td>{{result.fee_tax|intcomma}}원</td>
     </tr>
    </table>
 
@@ -478,10 +598,10 @@
     </div>
     </div>
     </div>
-</div>            
-            
-            
-            
+</div>
+
+</div>
+
 {% endblock %}
 
 

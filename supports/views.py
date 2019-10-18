@@ -649,6 +649,7 @@ class Dashborad_sales_totallistView(LoginRequiredMixin,ListView):
 
         context['total_c'] = customers_models.Customer.objects.filter(sales__id=self.kwargs['pk'])
         context['total_w'] = workings.select_related('work_name').filter(company__sales__id=self.kwargs['pk'])
+        context['total_rw'] = working_result.select_related('work_name').filter(company__sales__id=self.kwargs['pk'])
         context['total_r'] = Result.objects.select_related('work_name').filter(work_name__company__sales__id=self.kwargs['pk'])
 
 
