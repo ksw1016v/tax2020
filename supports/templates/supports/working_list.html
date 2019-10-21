@@ -54,7 +54,7 @@
                 <td>{{working.created|date:"y/m/d"}}</td>
                 <td>{{working.updated|date:"y/m/d"}}</td>
                 <td>{{working.memo}}</td>
-                <td><a href="{% url 'working_updatet' pk=working.id  %}" class ="btn btn-success btn-sm">수정</a> <a href="" class ="btn btn-danger btn-sm">삭제</a></td>
+                <td><a href="{% url 'working_updatet' pk=working.id  %}" class ="btn btn-success btn-sm">수정</a> <a href="{% url 'working_delete' pk=working.id %}" class ="btn btn-danger btn-sm">삭제</a> </td>
             </tr>
 
         {% endfor %}
@@ -110,6 +110,17 @@
         <th scope="row">영업자</th>
         <td>{{working.company.sales.name}}</td>
     </tr>
+
+    <tr>
+        <th scope="row">연락처</th>
+        <td>{{working.company.phone}}</td>
+    </tr>
+
+    <tr>
+        <th scope="row">주소</th>
+        <td>{{working.company.address}}</td>
+    </tr>
+
     <tr>
         <th scope="row">사업명</th>
         <td><a href="">{{working.work_name}}</td>
@@ -134,7 +145,7 @@
     </tr>
     <tr>
         <th scope="row">업데이트</th>
-        <td><a href="" class ="btn btn-success btn-sm">수정</a> <a href="" class ="btn btn-danger btn-sm">삭제</a> </td>
+        <td><a href="{% url 'working_updatet' pk=working.id  %}" class ="btn btn-success btn-sm">수정</a>  <a href="{% url 'working_delete' pk=working.id %}" class ="btn btn-danger btn-sm">삭제</a> </td>
     </tr>
 
     </table>

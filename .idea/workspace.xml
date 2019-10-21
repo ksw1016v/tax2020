@@ -2,13 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74085b93-3c7c-40f5-833e-b2a57e112667" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/templates/accounts/sales_confirm_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customers/templates/customers/customer_confirm_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supports/templates/supports/result_confirm_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supports/templates/supports/work_confirm_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supports/templates/supports/working_confirm_delete.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/logout.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/logout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/supports/templates/supports/sales_total.html" beforeDir="false" afterPath="$PROJECT_DIR$/supports/templates/supports/sales_total.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/sales_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/sales_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customers/templates/customers/customer_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/customers/templates/customers/customer_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customers/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/customers/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customers/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/customers/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supports/templates/supports/dashborad_total_amount.html" beforeDir="false" afterPath="$PROJECT_DIR$/supports/templates/supports/dashborad_total_amount.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supports/templates/supports/dashborad_total_fee.html" beforeDir="false" afterPath="$PROJECT_DIR$/supports/templates/supports/dashborad_total_fee.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supports/templates/supports/dashborad_total_pay.html" beforeDir="false" afterPath="$PROJECT_DIR$/supports/templates/supports/dashborad_total_pay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supports/templates/supports/result_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/supports/templates/supports/result_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supports/templates/supports/result_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/supports/templates/supports/result_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supports/templates/supports/work_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/supports/templates/supports/work_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supports/templates/supports/working_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/supports/templates/supports/working_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supports/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/supports/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/supports/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/supports/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,44 +32,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/supports/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12122">
-              <caret line="651" column="25" selection-start-line="651" selection-start-column="17" selection-end-line="651" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-              <folding>
-                <element signature="e#19823#19829#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/supports/templates/supports/sales_total.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2214">
-              <caret line="308" column="34" lean-forward="true" selection-start-line="308" selection-start-column="34" selection-end-line="308" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
+            <state relative-caret-position="285">
               <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/supports/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="157">
+              <caret line="33" column="115" selection-start-line="33" selection-start-column="93" selection-end-line="33" selection-end-column="115" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -90,47 +82,28 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config/urls.py" />
-        <option value="$PROJECT_DIR$/supports/templates/supports/supports_work.html" />
-        <option value="$PROJECT_DIR$/supports/templates/supports/work_create.html" />
-        <option value="$PROJECT_DIR$/customers/templates/customers/customer_work_add.html" />
-        <option value="$PROJECT_DIR$/supports/templates/supports/working_create.html" />
         <option value="$PROJECT_DIR$/accounts/models.py" />
         <option value="$PROJECT_DIR$/accounts/templates/accounts/myinfo.html" />
         <option value="$PROJECT_DIR$/accounts/templates/accounts/sales_create.html" />
         <option value="$PROJECT_DIR$/supports/templates/supports/working_update.html" />
-        <option value="$PROJECT_DIR$/supports/templates/supports/result_create.html" />
         <option value="$PROJECT_DIR$/supports/admin.py" />
         <option value="$PROJECT_DIR$/supports/templates/supports/result_update.html" />
         <option value="$PROJECT_DIR$/supports/templates/supports/result_pay_update.html" />
         <option value="$PROJECT_DIR$/supports/models.py" />
         <option value="$PROJECT_DIR$/supports/templates/supports/result_pay_dashborad_detail_list.html" />
         <option value="$PROJECT_DIR$/customers/forms.py" />
-        <option value="$PROJECT_DIR$/customers/urls.py" />
         <option value="$PROJECT_DIR$/customers/templates/customers/customer_update.html" />
         <option value="$PROJECT_DIR$/accounts/templates/accounts/sales_update.html" />
-        <option value="$PROJECT_DIR$/accounts/urls.py" />
         <option value="$PROJECT_DIR$/accounts/forms.py" />
-        <option value="$PROJECT_DIR$/accounts/views.py" />
         <option value="$PROJECT_DIR$/supports/templates/supports/work_update.html" />
         <option value="$PROJECT_DIR$/supports/forms.py" />
         <option value="$PROJECT_DIR$/supports/templates/supports/dashborad_list.html" />
-        <option value="$PROJECT_DIR$/supports/templates/supports/working_list.html" />
-        <option value="$PROJECT_DIR$/supports/templates/supports/dashborad_total_amount.html" />
-        <option value="$PROJECT_DIR$/supports/templates/supports/dashborad_total_fee.html" />
-        <option value="$PROJECT_DIR$/supports/templates/supports/dashborad_total_pay.html" />
         <option value="$PROJECT_DIR$/supports/templates/supports/dashborad_working_list_total.html" />
-        <option value="$PROJECT_DIR$/supports/templates/supports/result_list.html" />
         <option value="$PROJECT_DIR$/supports/templates/supports/result_nopay_list.html" />
         <option value="$PROJECT_DIR$/supports/templates/supports/result_pay_dashborad_list.html" />
         <option value="$PROJECT_DIR$/supports/templates/supports/result_pay_list.html" />
         <option value="$PROJECT_DIR$/supports/templates/supports/working_result_list.html" />
-        <option value="$PROJECT_DIR$/supports/urls.py" />
-        <option value="$PROJECT_DIR$/accounts/templates/accounts/sales_list.html" />
-        <option value="$PROJECT_DIR$/customers/templates/customers/customer_list.html" />
-        <option value="$PROJECT_DIR$/supports/templates/supports/work_list.html" />
         <option value="$PROJECT_DIR$/supports/templates/supports/work_add_list.html" />
-        <option value="$PROJECT_DIR$/customers/views.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/config/wsgi.py" />
@@ -138,17 +111,35 @@
         <option value="$PROJECT_DIR$/accounts/templates/accounts/login.html" />
         <option value="$PROJECT_DIR$/accounts/templates/accounts/logout.html" />
         <option value="$PROJECT_DIR$/accounts/templates/accounts/register.html" />
-        <option value="$PROJECT_DIR$/supports/views.py" />
         <option value="$PROJECT_DIR$/supports/templates/supports/sales_total.html" />
+        <option value="$PROJECT_DIR$/accounts/urls.py" />
+        <option value="$PROJECT_DIR$/accounts/templates/accounts/sales_list.html" />
+        <option value="$PROJECT_DIR$/customers/views.py" />
+        <option value="$PROJECT_DIR$/customers/urls.py" />
+        <option value="$PROJECT_DIR$/accounts/views.py" />
+        <option value="$PROJECT_DIR$/customers/templates/customers/customer_list.html" />
+        <option value="$PROJECT_DIR$/supports/templates/supports/work_list.html" />
+        <option value="$PROJECT_DIR$/supports/templates/supports/working_list.html" />
+        <option value="$PROJECT_DIR$/supports/views.py" />
+        <option value="$PROJECT_DIR$/supports/templates/supports/result_list.html" />
+        <option value="$PROJECT_DIR$/supports/urls.py" />
+        <option value="$PROJECT_DIR$/supports/templates/supports/result_create.html" />
+        <option value="$PROJECT_DIR$/supports/templates/supports/result_confirm_delete.html" />
+        <option value="$PROJECT_DIR$/supports/templates/supports/work_confirm_delete.html" />
+        <option value="$PROJECT_DIR$/supports/templates/supports/working_confirm_delete.html" />
+        <option value="$PROJECT_DIR$/customers/templates/customers/customer_confirm_delete.html" />
+        <option value="$PROJECT_DIR$/accounts/templates/accounts/sales_confirm_delete.html" />
+        <option value="$PROJECT_DIR$/supports/templates/supports/dashborad_total_amount.html" />
+        <option value="$PROJECT_DIR$/supports/templates/supports/dashborad_total_pay.html" />
+        <option value="$PROJECT_DIR$/supports/templates/supports/dashborad_total_fee.html" />
         <option value="$PROJECT_DIR$/config/settings.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="1120" />
-    <option name="height" value="835" />
+    <option name="x" value="1110" />
+    <option name="width" value="880" />
+    <option name="height" value="985" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -156,7 +147,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -167,16 +157,6 @@
             <path>
               <item name="Tax2020" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tax2020" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tax2020" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tax2020" type="462c0819:PsiDirectoryNode" />
-              <item name="customers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tax2020" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tax2020" type="462c0819:PsiDirectoryNode" />
               <item name="supports" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -191,16 +171,12 @@
               <item name="supports" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="supports" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tax2020" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tax2020" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -284,68 +260,6 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/supports/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/supports/templates/supports/result_create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#form#0;n#small#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/supports/templates/supports/result_update.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="82" column="45" lean-forward="true" selection-start-line="82" selection-start-column="45" selection-end-line="82" selection-end-column="45" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#form#0;n#small#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/customers/templates/customers/customer_update.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#small#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/supports/templates/supports/result_pay_update.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="124" column="20" selection-start-line="124" selection-start-column="20" selection-end-line="124" selection-end-column="20" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#form#0;n#small#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/customers/templates/customers/customer_create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="27" column="23" selection-end-line="71" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#small#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/customers/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="429">
@@ -362,16 +276,6 @@
           <caret line="57" column="30" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="87" selection-start-line="12" selection-start-column="72" selection-end-line="12" selection-end-column="87" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -393,16 +297,6 @@
           <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/customers/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="72" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="72" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -436,44 +330,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/supports/templates/supports/dashborad_total_amount.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="287" column="71" selection-start-line="287" selection-start-column="71" selection-end-line="287" selection-end-column="71" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/supports/templates/supports/dashborad_total_fee.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="242" column="68" selection-start-line="242" selection-start-column="68" selection-end-line="242" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/supports/templates/supports/dashborad_total_pay.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="287" column="68" selection-start-line="287" selection-start-column="68" selection-end-line="287" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/supports/templates/supports/dashborad_working_list_total.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="175" column="77" selection-start-line="175" selection-start-column="77" selection-end-line="175" selection-end-column="77" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/supports/templates/supports/result_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="205" column="60" selection-start-line="205" selection-start-column="60" selection-end-line="205" selection-end-column="60" />
           <folding>
             <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
@@ -500,26 +360,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/supports/templates/supports/working_result_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="184" column="68" selection-start-line="184" selection-start-column="68" selection-end-line="184" selection-end-column="68" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/supports/templates/supports/working_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2831">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/accounts/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
@@ -537,33 +377,6 @@
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/supports/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/supports/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="119" column="11" selection-start-line="119" selection-start-column="4" selection-end-line="119" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/supports/templates/supports/dashborad_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2755">
-          <caret line="145" column="140" selection-start-line="145" selection-start-column="127" selection-end-line="145" selection-end-column="140" />
         </state>
       </provider>
     </entry>
@@ -585,50 +398,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/customers/templates/customers/customer_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/customers/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/supports/templates/supports/result_pay_dashborad_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/supports/templates/supports/work_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
           <folding>
             <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
@@ -687,13 +460,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/sales_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1216">
-          <caret line="64" column="66" selection-start-line="64" selection-start-column="66" selection-end-line="64" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/sales_update.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
@@ -722,16 +488,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/supports/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12122">
-          <caret line="651" column="25" selection-start-line="651" selection-start-column="17" selection-end-line="651" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -744,14 +500,215 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/supports/templates/supports/sales_total.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2214">
-          <caret line="308" column="34" lean-forward="true" selection-start-line="308" selection-start-column="34" selection-end-line="308" selection-end-column="34" />
+        <state relative-caret-position="5852">
+          <caret line="308" column="34" selection-start-line="308" selection-start-column="34" selection-end-line="308" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="85" selection-start-line="85" selection-end-line="88" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/sales_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="115" column="188" lean-forward="true" selection-start-line="115" selection-start-column="100" selection-end-line="115" selection-end-column="188" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customers/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="52" column="46" lean-forward="true" selection-start-line="49" selection-end-line="52" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customers/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="101" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="101" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customers/templates/customers/customer_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="137" column="201" selection-start-line="137" selection-start-column="106" selection-end-line="137" selection-end-column="201" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supports/templates/supports/work_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="130" column="189" lean-forward="true" selection-start-line="130" selection-start-column="101" selection-end-line="130" selection-end-column="189" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supports/templates/supports/working_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="56" column="112" lean-forward="true" selection-start-line="56" selection-start-column="112" selection-end-line="56" selection-end-column="200" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supports/templates/supports/working_result_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3496">
+          <caret line="184" column="68" selection-start-line="184" selection-start-column="68" selection-end-line="184" selection-end-column="68" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supports/templates/supports/working_confirm_delete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="81" selection-start-line="10" selection-start-column="81" selection-end-line="10" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supports/templates/supports/work_confirm_delete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="58" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supports/templates/supports/result_confirm_delete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="129" selection-start-line="10" selection-start-column="129" selection-end-line="10" selection-end-column="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/sales_confirm_delete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customers/templates/customers/customer_confirm_delete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="56" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supports/templates/supports/result_create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="142" column="8" lean-forward="true" selection-start-line="142" selection-start-column="8" selection-end-line="142" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supports/templates/supports/result_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="70" column="42" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="42" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supports/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-299">
+          <caret line="52" column="13" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supports/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="675" lean-forward="true" selection-start-line="675" selection-end-line="675" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supports/templates/supports/dashborad_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="134" lean-forward="true" selection-start-line="134" selection-end-line="134" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supports/templates/supports/dashborad_total_pay.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="298" column="10" lean-forward="true" selection-start-line="298" selection-start-column="10" selection-end-line="298" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supports/templates/supports/dashborad_total_fee.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="204" lean-forward="true" selection-start-line="204" selection-end-line="204" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supports/templates/supports/dashborad_total_amount.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="178" lean-forward="true" selection-start-line="178" selection-end-line="291" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#3;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supports/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="33" column="115" selection-start-line="33" selection-start-column="93" selection-end-line="33" selection-end-column="115" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
+        <state relative-caret-position="285">
           <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
         </state>
       </provider>

@@ -655,3 +655,21 @@ class Dashborad_sales_totallistView(LoginRequiredMixin,ListView):
 
 
         return context
+
+
+
+class Work_DeleteView(LoginRequiredMixin,DeleteView):
+    model = Work
+    success_url = reverse_lazy('supportslist')
+
+
+class Working_DeleteView(LoginRequiredMixin,DeleteView):
+    model = Working
+    success_url = reverse_lazy('working_list')
+
+
+
+class Result_DeleteView(LoginRequiredMixin,DeleteView):
+    model = Result
+    success_url = reverse_lazy('result_list')
+

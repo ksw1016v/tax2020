@@ -81,3 +81,9 @@ class Sales_UpdateView(LoginRequiredMixin,UpdateView):
     form_class =Sales_UpaateForm
     success_url = reverse_lazy('salesman')
     template_name_suffix = '_create'
+
+
+
+class Sales_DeleteView(LoginRequiredMixin,DeleteView):
+    model = Sales
+    success_url = reverse_lazy('salesman')

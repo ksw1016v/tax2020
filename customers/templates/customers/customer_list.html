@@ -49,7 +49,7 @@
                 <td>{{customers.address}}</td>
                 <td>{{customers.memo}}</td>
                 <td>{{customers.sub_company}}</td>
-                <td><a href="{% url 'customer_update' pk=customers.id %}" class ="btn btn-success btn-sm">수정</a></td>
+                <td><a href="{% url 'customer_update' pk=customers.id %}" class ="btn btn-success btn-sm">수정</a>  <a href="{% url 'customerlist_delete' pk=customers.id %}" class ="btn btn-danger btn-sm">삭제</a></td>
 
 
 
@@ -135,7 +135,7 @@
     </tr>
     <tr>
         <th scope="row">수정</th>
-        <td><a href="{% url 'customer_update' pk=customers.id %}" class ="btn btn-success btn-sm">수정</a></td>
+        <td><a href="{% url 'customer_update' pk=customers.id %}" class ="btn btn-success btn-sm">수정</a>  <a href="{% url 'customerlist_delete' pk=customers.id %}" class ="btn btn-danger btn-sm">삭제</a></td>
     </tr>
 
    </table>

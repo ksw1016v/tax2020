@@ -11,6 +11,7 @@ urlpatterns = [
     path('salesman/', Salseman_List.as_view(), name='salesman'),
     path('salesman/create', Sales_CreateView.as_view(), name='salesman_create'),
     path('salesman/update/<int:pk>/', Sales_UpdateView.as_view(), name='salesman_update'),
+    path('salesman/delete/<int:pk>/', Sales_DeleteView.as_view(), name='salesman_delete'),
     path('', Index.as_view(), name='index'),
 
 

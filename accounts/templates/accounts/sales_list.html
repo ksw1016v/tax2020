@@ -43,7 +43,7 @@
                 <td>{{sales.phone}}</td>
                 <td>{{sales.referrer_name}}</td>
                 <td>{{sales.memo}}</td>
-                <td><a href="{% url 'salesman_update' pk=sales.id %}" class ="btn btn-success btn-sm">수정</a></td>
+                <td><a href="{% url 'salesman_update' pk=sales.id %}" class ="btn btn-success btn-sm">수정</a> <a href="{% url 'salesman_delete' pk=sales.id %}" class ="btn btn-danger btn-sm">삭제</a></td>
 
 
 
@@ -113,7 +113,7 @@
     </tr>
     <tr>
         <th scope="row">수정</th>
-        <td><a href="{% url 'salesman_update' pk=sales.id %}" class ="btn btn-success btn-sm">수정</a></td>
+        <td><a href="{% url 'salesman_update' pk=sales.id %}" class ="btn btn-success btn-sm">수정</a> <a href="{% url 'salesman_delete' pk=sales.id %}" class ="btn btn-danger btn-sm">삭제</a></td>
     </tr>
    </table>
 

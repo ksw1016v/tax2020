@@ -7,11 +7,13 @@ urlpatterns = [
     path('supportslist/', WorklistView.as_view(), name='supportslist'),
     path('supportslist/create/', Work_CreateView.as_view(), name='supports_create'),
     path('supportslist/update/<int:pk>/', Work_UpdateView.as_view(), name='supports_update'),
+    path('supportslist/delete/<int:pk>/', Work_DeleteView.as_view(), name='supports_delete'),
 
     path('work_add_list/', Customer_work_Add_ListView.as_view(template_name='supports/work_add_list.html'), name='work_add_list'),
     path('work_add_list/create/<int:pk>/', Work_add_CreateView.as_view(), name='work_add_list_create'),
     path('working_list/', Working_listView.as_view(), name='working_list'),
     path('working_list/update/<int:pk>/', Working_UpdateView.as_view(), name='working_updatet'),
+    path('working_list/delete/<int:pk>/', Working_DeleteView.as_view(), name='working_delete'),
 
     path('working_result_list/', Working_result_listView.as_view(template_name='supports/working_result_list.html'), name='working_result_list'),
 
@@ -19,6 +21,7 @@ urlpatterns = [
     path('result_list/update/<int:pk>/', Result_UpdateView.as_view(), name='result_update'),
     path('result_list/create/<int:pk>/', Result_CreateView.as_view(), name='result_create'),
     path('result_list/', Result_listView.as_view(), name='result_list'),
+    path('result_list/delete/<int:pk>/', Result_DeleteView.as_view(), name='result_delete'),
 
 
     path('result_pay_list/', Result_pay_listView.as_view(template_name='supports/result_pay_list.html'), name='result_pay_list'),

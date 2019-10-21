@@ -83,7 +83,7 @@
                 <td>{{result.work_date}}</td>
                 <td>{{result.work_category}}</td>
                 <td>{{result.work_result}}</td>
-                <td><a href="{% url 'result_update' pk=result.id  %}" class ="btn btn-success btn-sm">수정</a> <a href="" class ="btn btn-danger btn-sm">삭제</a></td>
+                <td><a href="{% url 'result_update' pk=result.id  %}" class ="btn btn-success btn-sm">수정</a> <a href="{% url 'result_delete' pk=result.id %}" class ="btn btn-danger btn-sm">삭제</a></td>
 
 
 

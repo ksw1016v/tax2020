@@ -111,14 +111,14 @@
     </div>
     </div>
     </div>
-</div>
+</div></div>
 
 
     <div class="x290">
 
     <div class="card shadow mb-4">
             <div class="card-header py-2">
-              <h6 class="m-1 font-weight-bold text-primary">계약 현황</h6>
+              <h6 class="m-1 font-weight-bold text-primary">배당 지급 </h6>
 
                 <form action="" method="get" class="form-inline">
                     <div class="form-group">
@@ -131,81 +131,80 @@
             </div>
     <div class="card-body">
     <div class="table-responsive">
+<table class ="table" style="font-size:x-small">
 
-{% for result in object_list %}
-    <table class="type09 ">
-
-    <thead>
+        <thead>
+         배당 총 지급/ 지급예정
         <tr>
-
-            <th scope="col">항목</th>
-            <th scope="col">내용</th>
-
+            <th scope="col">지급 건</th>
+            <th scope="col">지급</th>
+            <th scope="col">미지급 건</th>
+            <th scope="col">미지급</th>
         </tr>
 
-    </thead>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{result_fee.total_fee_count|intcomma}}건</td>
+            <td>{{result_fee.total_fee|intcomma}}원</td>
+            <td>{{result_fee1.total_fee_count1|intcomma}}건</td>
+            <td>{{result_fee1.total_fee1|intcomma}}원</td>
 
-    <tr>
-        <th scope="row">#</th>
-        <td>{{forloop.counter}}</td>
-    </tr>
-    <tr>
-        <th scope="row">회사</th>
-        <td>{{result.work_name.company}}</td>
-    </tr>
-
-    <tr>
-        <th scope="row">사업</th>
-        <td>{{result.work_name.work_name}}</td>
-    </tr>
-    <tr>
-        <th scope="row">마감일</th>
-        <td>{{result.work_date|date:"y/m/d"}}</td>
-    </tr>
-
-    <tr>
-        <th scope="row">내용</th>
-        <td>{{result.work_category}}</td>
-    </tr>
-    <tr>
-        <th scope="row">결과</th>
-        <td>{{result.work_result}}</td>
-    </tr>
-    <tr>
-        <th scope="row">신청</th>
-        <td>{{result.amount|intcomma}}원</td>
-    </tr>
-    <tr>
-        <th scope="row">입금예정</th>
-        <td>{{result.amount_duedate|date:"y/m/d"}}</td>
-    </tr>
-    <tr>
-        <th scope="row">입금일</th>
-        <td>{{result.amount_date|date:"y/m/d"}}</td>
-    </tr>
-    <tr>
-        <th scope="row">메모</th>
-        <td>{{result.amount_memo}}</td>
-    </tr>
-    <tr>
-        <th scope="row">등록일</th>
-        <td>{{result.created|date:"y/m/d"}}</td>
-    </tr>
-    <tr>
-        <th scope="row">수정일</th>
-        <td>{{result.updated|date:"y/m/d"}}</td>
-    </tr>
-
-
-    <tr>
-        <th scope="row">할일</th>
-        <td><a href="" class ="btn btn-success btn-sm">수정</a></td>
-    </tr>
-
+            </tr>
+        </tbody>
     </table>
 <p></p>
-{% endfor %}
+<table class ="table" style="font-size:x-small">
+        <thead>
+        {{now.month}}월 지급
+        <tr>
+            <th scope="col">영업자</th>
+            <th scope="col">지급건수</th>
+            <th scope="col">지급</th>
+            <th scope="col">차인지급</th>
+        </tr>
 
+        </thead>
+
+        <tbody>
+         {% for result_fee in result_fee2%}
+        <tr>
+            <td>{{result_fee.work_name__company__sales__name}}</td>
+            <td>{{result_fee.total_fee_count2|intcomma}}건</td>
+            <td>{{result_fee.total_fee2|intcomma}}원</td>
+            <td>{{result_fee.total_feetax2|intcomma}}원</td>
+
+        </tr>
+        {% endfor %}
+
+        </tbody>
+         </table>
+<p></p>
+        <table class ="table" style="font-size:x-small">
+        <thead>
+        다음달 {{nextmonth}}월 지급 예정
+        <tr>
+            <th scope="col">영업자</th>
+            <th scope="col">지급건수</th>
+            <th scope="col">지급예정</th>
+            <th scope="col">차인지급</th>
+        </tr>
+
+        </thead>
+
+        <tbody>
+         {% for result_fee in result_fee3%}
+        <tr>
+            <td>{{result_fee.work_name__company__sales__name}}</td>
+            <td>{{result_fee.total_fee_count3|intcomma}}건</td>
+            <td>{{result_fee.total_fee3|intcomma}}원</td>
+            <td>{{result_fee.total_feetax3|intcomma}}원</td>
+
+        </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
     </div>
     </div>
     </div>

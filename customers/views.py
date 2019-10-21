@@ -47,3 +47,7 @@ class Customer_UpdateView(LoginRequiredMixin, UpdateView):
     template_name_suffix = '_update'
 
 
+
+class Customer_DeleteView(LoginRequiredMixin,DeleteView):
+    model = Customer
+    success_url = reverse_lazy('customerlist')
